@@ -1,0 +1,43 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Deposit extends JFrame{
+	
+	public Deposit() {
+		
+		ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
+		Image i2=i1.getImage().getScaledInstance(900, 900, Image.SCALE_DEFAULT);
+		ImageIcon i3=new ImageIcon(i2);
+		JLabel image=new JLabel(i3);
+		image.setBounds(0, 0, 900, 900);
+		add(image);
+		
+		JLabel text=new JLabel("Enter the amount you want to Deposit");
+		text.setBounds(190, 300, 700, 35);
+		text.setForeground(Color.white);
+		text.setFont(new Font("Raleway",Font.BOLD,16));
+		image.add(text);
+		
+		JTextField amount=new JTextField();
+		amount.setFont(new Font("Raleway",Font.BOLD,14));
+		amount.setBounds(190, 350, 300, 25);
+		image.add(amount);
+		
+		
+		setSize(900,900);
+		setLocation(300,0);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Deposit();
+
+	}
+
+}
